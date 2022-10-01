@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Button, Pressable} from 'react-native';
+ 
+class App extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      num : 0
+    };
+ 
+    this.clicou = this.clicou.bind(this);
+    this.clicou2 = this.clicou2.bind(this);
+  }
+
+
+clicou(){
+    this.setState({
+      num: this.state.num + 1
+    });
+    
+  }
+
+  clicou2(){
+     this.setState({
+      num: this.state.num - 1
+    });
+    
+  }
+
+ 
+  render(){
+    
+
+    return(
+    <View>
+
+     <Text style={{ fontSize: 30, textAlign: 'center' }}>Contador de pessoas</Text>
+
+    <Text style={{ fontSize: 30, textAlign: 'center' }}>{this.state.num}</Text>
+ 
+      <Button color='green' title='+' onPress={() => this.clicou()}/>
+      <Button color='red' title='-' onPress={() => this.clicou2()}/>
+
+      
+
+       </View>
+    );
+  }
+}
+ 
+export default App;

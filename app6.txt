@@ -1,0 +1,51 @@
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Button, Image, TextInput} from 'react-native';
+ 
+class App extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      num3 : 0
+    };
+ 
+    this.clicou = this.clicou.bind(this);
+  }
+
+
+clicou(){
+    this.setState({
+      num3: Math.floor(Math.random() * 10)
+    });
+
+    
+  }
+
+ 
+
+ 
+  render(){
+    
+let img = 'https://cf.shopee.com.br/file/04368e477441c94dddee2b68e3441728';
+    return(
+    <View>
+
+     
+     <Text style={{ fontSize: 30, textAlign: 'center' }}>Número aleatório</Text>
+<Image
+          source={{ uri: img }}
+          style={{ width: 300, height: 300}}
+        />
+ 
+      <Text style={{ fontSize: 30, textAlign: 'center' }}>{this.state.num3}</Text>
+ 
+
+      <Button title="Entrar" onPress={this.clicou} />
+
+
+       </View>
+    );
+  }
+}
+ 
+export default App;
